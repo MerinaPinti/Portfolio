@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* que el video cubra toda la pantalla sin deformarse */
+  opacity: 0.95; /* transparencia */
+}
+
+
+header {
+  position: relative;
+  z-index: 1;
+  color: rgb(251, 255, 251);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero h1{
+  font-size: 50px; /* Tamaño de la fuente */
+  font-family: 'Fira Code', monospace;
+  font-weight: bold; /* Negrita */
+  color: #c364f0; /* Color del texto */
+  text-align: center; /* Centra el texto */
+  text-shadow: 0 0 50px #7bff00;
+  margin-top: 30px;
+}
+
+
+
+.navbar {
+  position: fixed;
+  font-family: 'Fira Code', monospace;
+  top: 0;
+  right: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 10px 0; 
+  background-color: #6f48a3; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para el efecto de profundidad */
+  z-index: 2;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  gap: 20px;
+  list-style: none;
+  margin-right: 20px; /* margen desde el borde derecho */
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+.hero {
+  position: relative;
+  z-index: 1;
+  font-family: 'Fira Code', monospace;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero h1{
+  font-size: 50px; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita */
+  color: #c364f0; /* Color del texto */
+  text-align: center; /* Centra el texto */
+  text-shadow: 0 0 50px #7bff00;
+  margin-top: 30px;
+}
+
+.perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.perfil-rectangulo {
+  padding: 8px;
+  background-color: #c682f3; /* Fondo blanco como contorno */
+  border: 3px solid #ee3975; /* Borde rosa */
+  border-radius: 16px; /* Bordes redondeados */
+  max-width: 450px; /* Tamaño máximo de la foto */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.perfil-rectangulo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* bordes suaves */
+  display: block;
+  opacity: 0.90;
+}
+
+.sobre-mi {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.sobre-mi h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffffff; 
+}
+
+.sobre-mi p {
+  font-size: 23px;
+  color: #dddddd; 
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.Lenguajes {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.Lenguajes h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff; 
+}
+
+
+.portfolio-languages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+
+.language-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.language-icon::after {
+  content: attr(data-tooltip);
+  font-family: 'Fira Code', monospace;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.language-icon:hover::after {
+  opacity: 1;
+}
+
+.language-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.language-icon img:hover {
+  transform: scale(1.3); /* Agranda el icono al pasar el mouse */
+}
+
+.Proyectos {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.Proyectos h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffffff; 
+  text-align: center; /* Alinea el título al centro */
+  
+}
+
+
+.contenedor-proyectos {
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* Espacio entre las imágenes */
+  flex-wrap: wrap; /* Para que si la pantalla es chica, bajen una abajo de la otra */
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.imagen-con-texto {
+  width: 500px; /* Tamaño de cada txt */
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+}
+
+.imagen-con-texto img {
+  width: 100%;
+  height: 300px; /* Altura fija */
+  object-fit: cover; /* Ajusta para que no se deforme */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.imagen-con-texto img:hover {
+  transform: scale(1.05); /* Agrandar al pasar el mouse */
+}
+
+.imagen-con-texto p {
+  font-size: 20px;
+  color: #dddddd; 
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.Contacto {
+  text-align: center;
+  
+}
+
+
+.Contacto h2 {
+  font-family: 'Fira Code', monospace;
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffffff; 
+  text-align: center; 
+}
+
+.contenedor-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  flex-wrap: wrap; /* Para que las imágenes se acomoden en nuevas líneas si es necesario */
+  align-items: center; /* Centra las imágenes verticalmente */
+  padding: 20px;
+  background-color: #6e2381; /* Cambia este color a gusto */
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  opacity: 75%;
+ 
+}
+
+.imagen-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 100%;
+}
+
+.imagen-contacto img {
+  width: 80px; /* Tamaño fijo para todas las imágenes */
+  height: 80px; /* Mismo alto para todas */
+  object-fit: cover; /* Para mantener la proporción sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  opacity: 100%;
+}
+
+.imagen-contacto img:hover {
+  transform: scale(1.05); /* Agrandar al pasar el mouse */
+  opacity: 100%;
+}
+
+.footer {
+  background-color: #6f48a3; /* Fondo del pie de página */
+  color: #fff; /* Texto blanco */
+  text-align: center; /* Centrado del texto */
+  padding: 20px; /* Espaciado interno */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  position: relative;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 5px 0; /* Espaciado entre los párrafos */
+}
+
+.footer a {
+  color: #00ff2a; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Subrayado cuando el mouse pasa por encima */
+}
