@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sitio</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> 
+</head>
+<body>
+ 
+
+<div class="video-background">
+  <video autoplay muted loop>
+    <source src="VideoBack.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<nav class="navbar">
+  <ul>
+    <li><a href="#Inicio">Inicio</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#Lenguajes">Lenguajes</a></li>
+    <li><a href="#Proyectos">Proyectos</a></li>
+    <li><a href="#Contacto">Contacto</a></li>
+    <li><a href="#Redes">Redes</a></li>
+  </ul>
+</nav>
+
+
+<header class="hero">
+  <selection class ="Inicio" id = "Inicio">
+  <h1>¡Hola! soy Marina Pinti</h1>
+  <div class="perfil">
+    <div class="perfil-rectangulo">
+      <img src="perfilImagen.png" alt="MPinti">
+    </div>
+  </div>
+</section>
+</header>
+
+<section class="sobre-mi" id="sobre-mi">
+  <h2>Sobre mí</h2>
+  <p>
+    Me encuentro cursando el último año de la Tecnicatura en Programación en la Universidad Tecnológica Nacional (UTN). 
+  </p>
+  <p>
+    Me gusta aprender y superarme día a día. 
+  </p> 
+  <p>
+    Actualmente estoy capacitandome en ABAP Restful Application Programming Model, C#, CSS y HTML. 
+  </p>
+  
+</section>
+
+<section class="Lenguajes" id="Lenguajes">
+  <h2>Lenguajes</h2>
+  <div class="portfolio-languages">
+    <div class="language-icon" data-tooltip="C++">
+      <img src="iconc++.png" alt="C++">
+    </div>
+    <div class="language-icon" data-tooltip="ABAP">
+      <img src="iconsap.png" alt="Abap">
+    </div>
+    <div class="language-icon" data-tooltip="JAVA SCRIPT">
+      <img src="iconjs.png" alt="JavaScript">
+    </div>
+    <div class="language-icon" data-tooltip="HTML5">
+      <img src="iconhtml.png" alt="HTML5">
+    </div>
+    <div class="language-icon" data-tooltip="C#">
+      <img src="iconc.png" alt="C#">
+    </div>
+    <div class="language-icon" data-tooltip="SQL">
+      <img src="iconsql.png" alt="Sql">
+    </div>
+  </div>
+</section>
+
+
+<section class="Proyectos" id="Proyectos">
+  <h2>Proyectos</h2>
+  <div class="contenedor-proyectos">
+    <div class="imagen-con-texto">
+      <a href="https://github.com/MarianoStoessel/TypeRacer" target="_blank">
+        <img src="juego.jpg" alt="Typeracer">
+      </a>
+      <p>Typeracer - Juego de mecanografía</p>
+    </div>
+    <div class="imagen-con-texto">
+      <a href="https://github.com/MerinaPinti/TPWinForm_equipo-11A" target="_blank">
+      <img src="articulos.jpg" alt="GestionArticulos">
+    </a>
+      <p>Sistema de gestión de base de datos de Artículos</p>
+    </div>
+  </div>
+</section>
+
+<!-- Botón para abrir el formulario -->
+<button id="abrirContacto" class="abrirContacto">Contacto</button></button>  
+
+
+<div id="modalContacto" class="modal"> <!-- Ventana Emergente -->
+  <section class="contacto" id="Contacto"> 
+    <span class="cerrar">&times;</span> <!-- Cierra la clase Modal Contacto -->
+    <h2>Formulario de Contacto</h2>
+    <form action="https://formspree.io/f/mgvkolql" method="POST"> <!-- Se envía formu a formspree linkeado con gmail -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button> <!-- Botón de enviar formu -->
+    </form>
+  </section>
+</div>
+
+
+<script> 
+/*Logica para ver si debe mostrarse la ventana emergente según lo que tenga la variable*/
+  const abrir = document.getElementById("abrirContacto");
+  const modal = document.getElementById("modalContacto");
+  const cerrar = document.querySelector(".cerrar");
+
+  abrir.onclick = () => modal.style.display = "block";
+  cerrar.onclick = () => modal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  }
+</script>
+
+<section class="Redes" id="Redes">
+  <h2>Redes</h2>
+  <div class="contenedor-redes">
+    <div class="imagen-redes">
+      <a href="https://github.com/MerinaPinti" target="_blank">
+      <img src="logoGit.png" alt="GitHub">
+    </a>
+    </div>
+    <div class="imagen-redes">
+      <a href="https://www.instagram.com/merina.pinti/?next=%2F" target="_blank">
+      <img src="logoInsta.png" alt="Instagram">
+    </a>
+    </div>
+    <div class="imagen-redes">
+      <a href="https://www.linkedin.com/in/marina-pinti-b3604b198/" target="_blank">
+      <img src="logoLink.png" alt="Linkedin">
+    </a>
+    </div>
+    <div class="imagen-redes">
+      <a href="https://www.youtube.com/@marinapinti8784" target="_blank">
+      <img src="logoYou.png" alt="Youtube">
+    </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <p>&copy; 2025 Marina Pinti. Todos los derechos reservados.</p>
+  <p><a href="mailto:marinacelestepinti2@gmail.com?subject=Hola%20Marina&body=Me%20interesa%20tu%20proyecto.">Enviar Correo</a></p>
+</footer>
+    
+
+</body>
+</html>
